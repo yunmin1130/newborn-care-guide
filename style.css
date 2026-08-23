@@ -344,6 +344,16 @@ footer{padding:40px 0 76px;color:var(--ink-3);font-size:13px;text-align:center}
 .home-note strong{color:#c33a50;background:linear-gradient(transparent 58%,#fbc9d3 58%)}
 .home-sec-title{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--ink-3);margin:44px 0 14px}
 
+.sheet-link{margin:16px 0 0!important}
+.sheet-link a{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font-size:14px;font-weight:800;color:#fff;background:#c33a50;
+  padding:11px 18px;border-radius:99px;transition:.16s;
+  box-shadow:0 2px 4px rgba(195,58,80,.18),0 10px 22px -12px rgba(195,58,80,.6);
+}
+.sheet-link a::before{content:"🖨";font-size:15px}
+.sheet-link a:hover{background:#a82b40;transform:translateY(-2px)}
+
 /* ============ 인쇄 ============ */
 @media print{
   nav.toc,.refs,.pager{display:none}
