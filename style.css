@@ -354,6 +354,32 @@ footer{padding:40px 0 76px;color:var(--ink-3);font-size:13px;text-align:center}
 .sheet-link a::before{content:"🖨";font-size:15px}
 .sheet-link a:hover{background:#a82b40;transform:translateY(-2px)}
 
+/* ============ 타임테이블 (rhythm.html) ============ */
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.jump a{
+  display:inline-flex;align-items:center;text-decoration:none;
+  font-size:14px;font-weight:800;color:var(--theme-dk);background:var(--theme-bg);
+  padding:9px 16px;border-radius:99px;transition:.16s;
+}
+.jump a:hover{background:var(--theme);color:#fff;transform:translateY(-2px)}
+
+.mcard{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:4px 24px;margin:18px 0}
+.mcard .row{display:grid;grid-template-columns:104px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.mcard .row:last-child{border-bottom:0}
+.mcard .k{font-size:14px;font-weight:800;color:var(--theme-dk);padding-top:2px;white-space:nowrap}
+.mcard .v{font-size:15px;line-height:1.7}
+.mcard .v p{margin:0 0 7px}
+.mcard .v p:last-child{margin-bottom:0}
+.mcard .v .sub{font-size:13.5px;color:var(--ink-3)}
+.mcard .v strong{color:var(--theme-dk);background:linear-gradient(transparent 60%,var(--theme-bg) 60%)}
+.mcard .row.warn .k{color:var(--rose)}
+.mcard .row.warn .v strong{color:var(--rose-dk);background:linear-gradient(transparent 60%,#fbd7de 60%)}
+@media(max-width:560px){
+  .mcard{padding:4px 18px}
+  .mcard .row{grid-template-columns:1fr;gap:6px;padding:14px 0}
+}
+@media print{.jump{display:none}.mcard{box-shadow:none;border:1px solid #bbb;page-break-inside:avoid}}
+
 /* ============ 인쇄 ============ */
 @media print{
   nav.toc,.refs,.pager{display:none}
