@@ -380,6 +380,8 @@ footer{padding:40px 0 76px;color:var(--ink-3);font-size:13px;text-align:center}
 }
 @media print{.jump{display:none}.mcard{box-shadow:none;border:1px solid #bbb;page-break-inside:avoid}}
 
+.sub-note{display:block;margin-top:8px;font-size:13px;color:var(--ink-2);line-height:1.6}
+
 /* ============ 인쇄 ============ */
 @media print{
   nav.toc,.refs,.pager{display:none}
