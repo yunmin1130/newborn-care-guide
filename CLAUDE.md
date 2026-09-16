@@ -24,8 +24,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 파일 구조와 역할
 
-- `index.html` — 홈. 파트 카드 5장 + "가장 먼저 외울 것" 박스 + D-day 타임라인 표
-- `part1.html` ~ `part5.html` — 본문 파트. part1~3은 내용 완료, part4~5는 스텁(뼈대만)
+- `index.html` — 홈. 파트 카드 6장(0~5) + "가장 먼저 외울 것" 박스 + 참조용 표 카드 2장 + D-day 타임라인 표
+- `birth.html` — PART 0. 제왕절개 수술 전날~조리원 퇴소까지 남편 역할. 테마는 p4(lilac) 재사용
+- `part1.html` ~ `part5.html` — 본문 파트. 전부 작성 완료
+- `emergency.html` — 인쇄용 응급 시트. 목차 없음(nav.js 미사용), 연락처는 실제 병원 정보
+- `rhythm.html` — PART 2 부록. 월령별 먹-놀-잠 카드(`.mcard`) 6장 + 하루 예시. 월령 구간은 0~1/1~2/2~4/4~6/6~9/9~12개월로 통일
 - `style.css` — 전체 스타일 단일 파일. 컴포넌트 클래스 전부 여기 정의
 - `nav.js` — 사이드바 목차 스크롤 스파이. `main section[id]`와 `nav.toc a.item[href="#id"]`을 매칭해 `.active` 토글
 
