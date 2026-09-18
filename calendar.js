@@ -93,7 +93,7 @@
   ];
 
   /* ---------- 상태 ---------- */
-  var KEY = 'ncg_dday';
+  var DDAY = '2026-10-06';  // 수술 예정일 — 모든 방문자에게 동일하게 고정
   var dday = null;          // Date (로컬 자정)
   var view = new Date();    // 보고 있는 달
   view.setDate(1);
@@ -101,7 +101,7 @@
 
   var $ = function (s) { return document.querySelector(s); };
   var el = {
-    input: $('#dday-input'), save: $('#dday-save'), status: $('#dday-status'),
+    status: $('#dday-status'),
     title: $('#cal-title'), grid: $('#cal-grid'), panel: $('#day-panel'),
     prev: $('#cal-prev'), next: $('#cal-next'), today: $('#cal-today'), goD: $('#cal-dday'),
     legend: $('#cal-legend')
@@ -128,14 +128,6 @@
   function phaseOf(off) {
     for (var i = 0; i < PHASES.length; i++) if (off >= PHASES[i].from && off < PHASES[i].to) return PHASES[i];
     return null;
-  }
-
-  /* ---------- 저장 ---------- */
-  function load() {
-    try { var v = localStorage.getItem(KEY); if (v) dday = toDate(v); } catch (e) {}
-  }
-  function save(str) {
-    try { localStorage.setItem(KEY, str); } catch (e) {}
   }
 
   /* ---------- 렌더 ---------- */
@@ -214,22 +206,13 @@
   function renderStatus() {
     if (dday) {
       var off = diffDays(new Date(new Date().setHours(0, 0, 0, 0)), dday);
-      el.status.innerHTML = 'D-day <strong>' + toStr(dday) + '</strong> · 오늘은 <strong>' + dLabel(off) + '</strong>';
-      el.input.value = toStr(dday);
-    } else {
-      el.status.textContent = '아직 입력되지 않았습니다.';
+      el.status.innerHTML = '수술 예정일 <strong>' + (dday.getMonth() + 1) + '월 ' + dday.getDate() + '일</strong> · 오늘은 <strong>' + dLabel(off) + '</strong>';
     }
   }
 
   function renderAll() { renderStatus(); renderCalendar(); renderPanel(); }
 
   /* ---------- 이벤트 ---------- */
-  el.save.addEventListener('click', function () {
-    if (!el.input.value) return;
-    dday = toDate(el.input.value); save(el.input.value);
-    view = new Date(dday); view.setDate(1); selected = new Date(dday);
-    renderAll();
-  });
   el.prev.addEventListener('click', function () { view.setMonth(view.getMonth() - 1); renderCalendar(); });
   el.next.addEventListener('click', function () { view.setMonth(view.getMonth() + 1); renderCalendar(); });
   el.today.addEventListener('click', function () {
@@ -245,7 +228,7 @@
   });
 
   /* ---------- 시작 ---------- */
-  load();
+  dday = toDate(DDAY);
   if (dday) { var t0 = new Date(); t0.setHours(0, 0, 0, 0); var o = diffDays(t0, dday); selected = t0; view = new Date(o < -45 ? dday : t0); view.setDate(1); }
   renderLegend();
   renderAll();

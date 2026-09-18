@@ -389,7 +389,7 @@ body.cal{--theme:#3d8fd1;--theme-2:#6fb6e8;--theme-bg:#e8f3fc;--theme-dk:#12507e
 .cal-setup input[type=date]{font:inherit;font-size:15px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
 .cal-setup button,.cal-controls button{font:inherit;font-size:13.5px;font-weight:800;padding:8px 16px;border:0;border-radius:99px;cursor:pointer;background:var(--theme);color:#fff;transition:.16s}
 .cal-setup button:hover,.cal-controls button:hover{transform:translateY(-1px);filter:brightness(1.05)}
-.cal-setup .status{font-size:13.5px;color:var(--ink-2);margin-left:auto}
+.cal-setup .status{font-size:15px;color:var(--ink-2)}
 .cal-note{font-size:13px;color:var(--ink-3);margin:0 0 18px}
 
 .cal-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 10px}
@@ -449,7 +449,6 @@ body.cal{--theme:#3d8fd1;--theme-2:#6fb6e8;--theme-bg:#e8f3fc;--theme-dk:#12507e
   .cal-grid .cell .n{font-size:12.5px}
   .cal-grid .cell .dd{font-size:8.5px}
   .cal-grid .cell .dots i{width:6px;height:6px}
-  .cal-setup .status{margin-left:0;flex-basis:100%}
 }
 @media print{.cal-setup,.cal-controls,.cal-note{display:none}.cal-grid,.day-panel ul.ev li{box-shadow:none;border:1px solid #bbb}}
 
