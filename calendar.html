@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>출산 달력 — 신생아 돌봄 가이드</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="cal">
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="part-badge">달력 · D-day 기준</p>
+    <h1>출산 달력</h1>
+    <p class="subtitle">흩어진 시점을 날짜 하나로 모았습니다</p>
+    <p class="lede">수술일 또는 출산 예정일을 넣으면 <b>접종·검진·산모 회복·먹-놀-잠 전환 시점</b>이 그 날짜 기준으로 달력에 찍힙니다. 날짜를 누르면 그날 할 일과 자세한 설명으로 가는 링크가 나옵니다.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<div class="cal-setup">
+  <label for="dday-input">수술일 · 출산 예정일</label>
+  <input type="date" id="dday-input">
+  <button id="dday-save" type="button">저장</button>
+  <span id="dday-status" class="status"></span>
+</div>
+
+<p class="cal-note">이 브라우저에만 저장됩니다. 서버에 보내지 않고, 지우면 사라집니다. 원더윅스 주차는 <strong>출산 예정일 기준</strong>이라 예정일보다 일찍 수술했다면 그만큼 뒤로 밀어서 보세요.</p>
+
+<div class="cal-controls">
+  <div class="nav">
+    <button id="cal-prev" type="button" aria-label="이전 달">◀</button>
+    <span id="cal-title" class="title"></span>
+    <button id="cal-next" type="button" aria-label="다음 달">▶</button>
+  </div>
+  <div class="jumps">
+    <button id="cal-today" type="button">오늘</button>
+    <button id="cal-dday" type="button">D-day</button>
+  </div>
+</div>
+
+<div id="cal-legend" class="cal-legend"></div>
+
+<div id="cal-grid" class="cal-grid"></div>
+
+<div id="day-panel" class="day-panel"></div>
+
+<div class="box miss">
+  <span class="label">이 달력을 쓰는 법</span>
+  <ul>
+    <li><strong>점</strong>은 그날 시작하거나 마감인 항목, <strong>칸 아래 색 띠</strong>는 진행 중인 기간(영유아검진 창, 로타 접종 창 등)입니다</li>
+    <li>먹-놀-잠은 날짜가 아니라 <strong>구간</strong>이라, 구간이 바뀌는 날에만 점을 찍고 대신 어느 날을 눌러도 <strong>“지금 구간”</strong>이 패널 맨 위에 나옵니다</li>
+    <li>여기 있는 날짜는 <strong>평균 기준</strong>입니다. 접종·검진처럼 기한이 있는 것은 정확하고, 발달·회복 시점은 편차가 큽니다</li>
+    <li>병원에서 받은 실제 예약 날짜가 있으면 <strong>그게 우선</strong>입니다</li>
+  </ul>
+</div>
+
+<div class="pager">
+  <a href="index.html"><span class="dir">← 홈</span><span class="name">전체 목차</span></a>
+  <a class="next" href="birth.html"><span class="dir">시작 →</span><span class="name">0. 출산 당일</span></a>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    신생아 돌봄 가이드 · 출산 달력<br>
+    날짜는 참고용입니다. 병원 예약과 의료진 지시가 우선합니다.
+  </div>
+</footer>
+
+<script src="calendar.js"></script>
+</body>
+</html>
