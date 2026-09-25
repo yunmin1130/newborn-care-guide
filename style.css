@@ -454,6 +454,13 @@ body.cal{--theme:#3d8fd1;--theme-2:#6fb6e8;--theme-bg:#e8f3fc;--theme-dk:#12507e
 
 @media(min-width:1180px){body.cal header .wrap,body.cal main.wrap,body.cal footer .wrap{margin-left:auto;margin-right:auto;max-width:920px;padding:0 22px}body.cal header.page-head{text-align:center}}
 
+/* 본문 주차→실제 날짜 주석 (dates.js) */
+.dt{display:inline-block;margin-left:4px;padding:1px 7px;border-radius:99px;font-size:.78em;font-weight:700;letter-spacing:0;line-height:1.5;color:var(--ink-2);background:#fff;border:1px solid var(--line);vertical-align:1px;white-space:nowrap}
+strong .dt,.big .dt{background:#fff;color:var(--ink-2)}
+.big .dt{font-size:.6em;vertical-align:middle}
+td .dt{margin-left:3px}
+@media print{.dt{border-color:#999}}
+
 /* ============ 인쇄 ============ */
 @media print{
   nav.toc,.refs,.pager{display:none}

@@ -29,7 +29,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `part1.html` ~ `part5.html` — 본문 파트. 전부 작성 완료
 - `emergency.html` — 인쇄용 응급 시트. 목차 없음(nav.js 미사용), 연락처는 실제 병원 정보
 - `rhythm.html` — PART 2 부록. 월령별 먹-놀-잠 카드(`.mcard`) 6장 + 하루 예시. 월령 구간은 0~1/1~2/2~4/4~6/6~9/9~12개월로 통일
-- `calendar.html` + `calendar.js` — 출산 달력. D-day는 `calendar.js` 상단 `DDAY` 상수로 고정(수술 예정일). 시점 데이터 `EVENTS`/`PHASES`도 같은 파일 — 본문 시점을 고치면 여기도 함께
+- `dates.js` — **D-day 기준일의 단일 출처**(`window.NCG_DDAY`). 모든 페이지에 로드되어 본문의 “생후 N주/N개월/D+N/N일차”를 찾아 옆에 `<span class="dt">26년 10월 3주차</span>`를 자동으로 붙인다. 기간 표현(간격·마다·동안·뿐·N주간·1주일·임신 주수)은 제외 규칙으로 거른다. 본문에 시점을 쓸 때는 이 패턴을 따르면 자동 변환됨
+- `calendar.html` + `calendar.js` — 출산 달력. 시점 데이터 `EVENTS`/`PHASES`는 `calendar.js` — 본문 시점을 고치면 여기도 함께. D-day는 `dates.js`에서 읽음
 - `style.css` — 전체 스타일 단일 파일. 컴포넌트 클래스 전부 여기 정의
 - `nav.js` — 사이드바 목차 스크롤 스파이. `main section[id]`와 `nav.toc a.item[href="#id"]`을 매칭해 `.active` 토글
 

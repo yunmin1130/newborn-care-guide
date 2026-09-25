@@ -94,7 +94,7 @@
   ];
 
   /* ---------- 상태 ---------- */
-  var DDAY = '2026-10-06';  // 수술 예정일 — 모든 방문자에게 동일하게 고정
+  var DDAY = window.NCG_DDAY || '2026-10-06';  // 기준일은 dates.js에서 정의. 여기 값은 dates.js가 없을 때만 씀
   var dday = null;          // Date (로컬 자정)
   var view = new Date();    // 보고 있는 달
   view.setDate(1);
